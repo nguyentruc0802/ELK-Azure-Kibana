@@ -6,7 +6,7 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the filebeat-playbook.yml file may be used to install only certain pieces of it, such as Filebeat.
 
-  - _TODO: Enter the playbook file.
+  - Enter the playbook file
 
 
 This document contains the following details:
@@ -23,16 +23,16 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box? 
+- What aspect of security do load balancers protect? What is the advantage of a jump box? 
 
 •	The jump box serves as a gateway between all the VM’s and act as a front-line when connecting to the internet. The jump box reduce potential attacks surface by giving access control to a single strong access point rather than many individual VM’s.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the data and system logs.
 
-- _TODO: What does Filebeat watch for? 
+- What does Filebeat watch for? 
 Filebeat monitors log files or locations that you specify, collects that log events then forwards it to either Elasticsearch or Logstash for indexing.
 
-- _TODO: What does Metricbeat record?
+- What does Metricbeat record?
 Metricbeat collects metrics from the operating system and from services running on the server, then takes the metrics and statistics that it collects and send them to the output you specify. 
 
 The configuration details of each machine may be found below.
@@ -55,7 +55,7 @@ Only the host machine can accept connections from the Internet. Access to this m
 •	168.62.56.78
 
 Machines within the network can only be accessed by SSH and HTTP via the jump-box.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address? 
+- Which machine did you allow to access your ELK VM? What was its IP address? 
 
 •	You can access the ELK VM by using ip 52.229.49.69 and jump box 10.1.0.4
 
@@ -112,16 +112,16 @@ SSH into the control node and follow the steps below:
 •	Update the /etc/ansible/hosts file to include [webservers] and their correlating IP addresses, along with [elk] and it’s IP address.
 •	Run the playbook, and navigate to http://ELKpublicIPaddress:5601/app/kibana to check that the installation worked as expected.
 
-_TODO: Answer the following questions to fill in the blanks:_
+Answer the following questions to fill in the blanks:
  
-_Which file is the playbook? Where do you copy it?
+- Which file is the playbook? Where do you copy it?
 
 •	Copy /etc/ansible/files/filebeat-config.yml to /etc/filebeat/filebeat.yml
 
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
+- Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
 You update the filebeat-config.yml. You then update the host files with the IP addresses of the [webservers] and [elkservers].
 
-- _Which URL do you navigate to in order to check that the ELK server is running?
+- Which URL do you navigate to in order to check that the ELK server is running?
 
 •	http://[public_IP_ELK]:5601/app/kibana
 
